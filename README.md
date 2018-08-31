@@ -1,7 +1,27 @@
 #### 初始化项目
 
 ```
+加入文件数据加载
+加入图片
+加入css 打包
+html和js基础打包
+```
+
+
+
+```
+# 安装
+npm install webpack -g
+npm install webpack-cli -g
+npm install webpack -D
+
+
+
 npm init -y
+
+# 均会写入package.json
+npm install --save      #  写入 dependencies
+npm install --save-dev  #  写入 devDependencies
 ```
 
 #### 创建文件结构
