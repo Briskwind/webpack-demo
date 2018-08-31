@@ -2,8 +2,8 @@
 
 ```
 
-
-管理js文件输出
+监听文件改变自动打包:"watch": "webpack --watch"
+管理js文件输出(HtmlWebpackPlugin 插件重新生成index.html，加载相关js文件)
 加入文件数据加载
 加入图片
 加入css 打包
