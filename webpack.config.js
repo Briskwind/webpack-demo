@@ -1,47 +1,21 @@
-const path = require('path');
-
-module.exports = {
-    entry: './src/index.js',
-    output: {
-          filename: 'bundle.js',
-          path: path.resolve(__dirname, 'dist')
-        },
-    module: {
-       rules: [
-          // 加载css
-           {
-               test: /\.css$/,
-               use: [
-                   'style-loader',
-                   'css-loader'
-                 ]
-           },
-        // 加载图片
-          {
-   	       test: /\.(png|svg|jpg|gif)$/,
-               use: [
-            	    'file-loader'
-          	]
-           },
-
-         // 加载文件数据资源
-         {
-         test: /\.(csv|tsv)$/,
-         use: [
-           'csv-loader'
-         ]
-       },
-       {
-         test: /\.xml$/,
-         use: [
-           'xml-loader'
-         ]
-       }
+  const path = require('path');
+  const HtmlWebpackPlugin = require('html-webpack-plugin');
+ 
+   module.exports = {
+   entry: {
+     app: './src/index.js',
+     print: './src/print.js'
+   },
+// 重新生成index.html 自己加载相关js
+   plugins: [
+     new HtmlWebpackPlugin({
+       title: 'Output Management'
+     })
+   ],
 
 
-
-
-         ]
-     }
-
-};
+   output: {
+     filename: '[name].bundle.js',
+      path: path.resolve(__dirname, 'dist')
+    }
+  };
