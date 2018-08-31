@@ -1,6 +1,7 @@
 #### 初始化项目
 
 ```
+增加runtimeChunk: 'single'将node_modules 的vendor 进行分离
 配置文件区分生产环境，正式环境
 为打包后的bundle.js增加哈希值
 增加webpack-dev-server插件,但是使用该插件之后dist文件夹不见了

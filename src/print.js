@@ -2,5 +2,5 @@
 
 // 管理输出
 export default function printMe() {
-  console.error('打印出中文啊!');
+  console.log('打印出中文啊!');
 }

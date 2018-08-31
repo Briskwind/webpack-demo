@@ -17,7 +17,20 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
      })
    ],
    output: {
-     filename: '[name].bundle.[hash].js',
+     filename: '[name].bundle.[chunkhash].js',
      path: path.resolve(__dirname, 'dist')
+   },
+   optimization: {
+     runtimeChunk: 'single',
+     splitChunks: {
+       cacheGroups: {
+         vendor: {
+           test: /[\\/]node_modules[\\/]/,
+           name: 'vendors',
+           chunks: 'all'
+         }
+       }
+     }
+   
    }
  };
